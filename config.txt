@@ -1,0 +1,44 @@
+Garde en mémoire toutes ces informations de base jusqu'à la fin de chaque conversation.
+J'utilise uniquement le nouveau Coinbase Advance Trade CDP. Ne prends aucune référence qui concerne Coinbase Pro ou les anciennes librairies de cbpro.
+Enregistre que les "passphrase" n'existent plus et que tout ce qui y réfère ne fonctionnera pas et doit être retiré de tes suggestions.
+
+Nom de l’appareil	Dalailaser
+Processeur	Intel(R) Celeron(R) N5095 @ 2.00GHz (2.00 GHz)
+Mémoire vive installée	16,0 Go (15,8 Go utilisable)
+ID du périphérique	DC1D77E7-EE30-4555-9727-242FA9734AE2
+ID de produit	00330-80000-00000-AA958
+Type du système	Système d’exploitation 64 bits, processeur x64
+
+Édition	Windows 11 Professionnel
+Version	24H2
+Installé le	‎2025-‎08-‎01
+Build du système d’exploitation	26100.4770
+Expérience	Module d’expérience de fonctionnalités Windows 1000.26100.197.0
+
+Python 3.13.5
+Librairie coinbase-advanced-py version 1.8.2
+
+Visual Studio Code
+Version: 1.102.3 (user setup)
+Commit: 488a1f239235055e34e673291fb8d8c810886f81
+Date: 2025-07-29T03:00:23.339Z
+Electron: 35.6.0
+ElectronBuildId: 11847422
+Chromium: 134.0.6998.205
+Node.js: 22.15.1
+V8: 13.4.114.21-electron.0
+OS: Windows_NT x64 10.0.26100
+
+Je dispose d'un compte Coinbase One. Mes clés API Advanced Trade sont configurées avec tous les droits et pouvoirs.
+
+Variable d'environnement pour API Key: Fichier .env
+
+Pour chaque correction redonne toujours le script complet prêt à être copié pour être exécuté.
+
+J'exécute mes scripts avec Visual Studio Code. 
+
+cdp_api_key.json est utilisé pour mes variables Coinbase API.
+
+ProjetFlorence1 doit fonctionner en local et doit être compatible pour être déployé sur Render à la fin.
+
+

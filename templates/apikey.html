@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connexion API</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>{{ msg or "Entrez vos clés API Coinbase." }}</h2>
+    <form method="post" action="/apikey">
+        <input type="hidden" name="email" value="{{ email }}">
+        <input type="text" name="api_key" placeholder="API KEY" required><br>
+        <textarea name="api_secret" rows="8" cols="60" placeholder="API SECRET (clé privée)" required></textarea><br>
+        <button type="submit">Enregistrer</button>
+    </form>
+</body>
+</html>

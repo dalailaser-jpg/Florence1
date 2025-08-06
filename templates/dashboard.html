@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Florence</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1 style="font-size: 300%;">Bienvenue dans le merveilleux monde de Florence {{ email.split('@')[0] }}</h1>
+
+    <form method="post" action="/settings">
+        <input type="hidden" name="email" value="{{ email }}">
+        <h3>Robot de surveillance :</h3>
+        <label>Seuil de profit (%) :</label>
+        <input type="number" step="0.1" name="profit" value="{{ profit }}" required><br>
+
+        <label>Activer le robot :</label>
+        <input type="checkbox" name="active" {% if active %}checked{% endif %}><br>
+
+        <h3>Choisir les actifs à surveiller :</h3>
+        {% for a in assets %}
+            <input type="checkbox" name="tracked_assets" value="{{ a.currency }}" {% if a.currency in tracked_assets %}checked{% endif %}>
+            {{ a.currency }}<br>
+        {% endfor %}
+
+        <button type="submit">Enregistrer les préférences</button>
+    </form>
+
+    <h3>Vos actifs :</h3>
+    <table>
+        <tr><th>Symbole</th><th>Quantité</th><th>Prix (USD)</th><th>Prix (CAD)</th><th>⬅ USD</th><th>CAD ➡</th></tr>
+        {% for a in assets %}
+        <tr>
+            <td>{{ a.currency }}</td>
+            <td>{{ a.balance }}</td>
+            <td>{{ a.price_usd }}</td>
+            <td>{{ a.price_cad }}</td>
+            <td>⬅</td>
+            <td>➡</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form method="post" action="/login">
+        <input type="hidden" name="email" value="{{ email }}">
+        <input type="hidden" name="password" value="******">
+        <button type="submit">🔁 Refresh</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Ignorer fichiers/dossiers sensibles ou inutiles
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.key
+cdp_api_key (1).json
+MongoDB/
+mongodb-windows-*

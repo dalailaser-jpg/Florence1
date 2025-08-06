@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Florence1 - Tableau de bord</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue, {{ user_email }}</h1>
+
+        {% if balances %}
+        <div class="totaux">
+            <p><strong>Valeur totale des actifs (USD) :</strong> {{ total_usd }} $</p>
+            <p><strong>Valeur totale des actifs (CAD) :</strong> {{ total_cad }} $</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Actif</th>
+                    <th>Quantité</th>
+                    <th>Valeur (USD)</th>
+                    <th>Valeur (CAD)</th>
+                    <th>Prix Initial</th>
+                    <th>Prix Actuel</th>
+                    <th>Variation</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for asset in balances %}
+                <tr>
+                    <td>{{ asset['symbol'] }}</td>
+                    <td>{{ asset['amount'] }}</td>
+                    <td>{{ asset['value_usd'] }} $</td>
+                    <td>{{ asset['value_cad'] }} $</td>
+                    <td>{{ asset['initial_price'] }} $</td>
+                    <td>{{ asset['current_price'] }} $</td>
+                    <td>
+                        {% if asset['variation_percent'] >= 0 %}
+                            +{{ asset['variation_percent'] }} %
+                        {% else %}
+                            {{ asset['variation_percent'] }} %
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>Aucun solde à afficher.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

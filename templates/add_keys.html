@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter mes clés API Coinbase</title>
+</head>
+<body>
+    <h1>Connexion à mon compte Coinbase</h1>
+    <form method="post" action="/save_api_keys">
+        <label>API Key :</label><br>
+        <input type="text" name="api_key" required><br><br>
+
+        <label>API Secret :</label><br>
+        <input type="password" name="api_secret" required><br><br>
+
+        <button type="submit">Enregistrer</button>
+    </form>
+
+    <p><a href="/dashboard">← Retour au tableau de bord</a></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Florence1</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Bienvenue dans le merveilleux monde de Florence !</h1>
+    <p>{{ msg or "Connexion ou inscription." }}</p>
+
+    <div class="form-box">
+        <h2>Inscription</h2>
+        <form method="post" action="/register">
+            <input type="email" name="email" placeholder="Email" required><br>
+            <input type="password" name="password" placeholder="Mot de passe" required><br>
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+
+    <div class="form-box">
+        <h2>Connexion</h2>
+        <form method="post" action="/login">
+            <input type="email" name="email" placeholder="Email" required><br>
+            <input type="password" name="password" placeholder="Mot de passe" required><br>
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+</body>
+</html>
