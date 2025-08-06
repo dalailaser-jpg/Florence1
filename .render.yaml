@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: florence1-web
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port 10000"
+    plan: free
+    envVars:
+      - key: SECRET_KEY
+        value: supercleflorence
+    autoDeploy: true
+    healthCheckPath: /
+
+  - type: worker
+    name: florence1-bot
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python florence_bot.py"
+    plan: free
+    envVars:
+      - key: SECRET_KEY
+        value: supercleflorence
+    autoDeploy: true
